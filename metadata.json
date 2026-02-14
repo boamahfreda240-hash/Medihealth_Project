@@ -1,0 +1,7 @@
+{
+  "name": "MediCloud Health Suite",
+  "description": "A comprehensive medical record management system with AI-powered insights, patient tracking, and secure record sharing capabilities.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
