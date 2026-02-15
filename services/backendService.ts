@@ -1,7 +1,5 @@
-export const API_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://medihealth-api.onrender.com/api' 
-  : 'http://localhost:4001/api';
-  
+export const API_BASE = 'https://medihealth-api.onrender.com/api';
+
 export async function fetchPatients() {
   const res = await fetch(`${API_BASE}/patients`);
   return res.json();
