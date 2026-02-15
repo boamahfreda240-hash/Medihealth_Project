@@ -1,15 +1,13 @@
-export const API_BASE = 'https://medihealth-api.onrender.com/api';
-<<<<<<< HEAD
+export const API_BASE = process.env.NODE_ENV === 'production'
+  ? 'https://medihealth-api.onrender.com/api'
+  : 'http://localhost:4001/api';
 
-=======
-  
->>>>>>> 7cb58d8abb2f2ac521eede20401dcae31e9a8148
 export async function fetchPatients() {
   const res = await fetch(`${API_BASE}/patients`);
   return res.json();
 }
 
-export async function createPatient(patient) {
+export async function createPatient(patient: any) {
   const res = await fetch(`${API_BASE}/patients`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -17,6 +15,8 @@ export async function createPatient(patient) {
   });
   return res.json();
 }
+
+// ... rest of your functions
 
 export async function archivePatient(id) {
   const res = await fetch(`${API_BASE}/patients/${id}/archive`, { method: 'PUT' });
