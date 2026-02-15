@@ -1,11 +1,15 @@
 ﻿const express = require('express');
 const cors = require('cors');
 const app = express();
-const PORT = 4001;
+const PORT = process.env.PORT || 4001;  // Use Render's port or fallback to 4001
 
-// Allow requests from your React app (port 3001)
+// Allow requests from both localhost AND your Vercel app
 app.use(cors({
-  origin: 'http://localhost:3001'
+  origin: [
+    'http://localhost:3001',
+    'https://medihealth-project.vercel.app'  // Add your Vercel URL here
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
