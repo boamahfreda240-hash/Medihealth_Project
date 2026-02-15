@@ -1,5 +1,9 @@
 export const API_BASE = 'https://medihealth-api.onrender.com/api';
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 7cb58d8abb2f2ac521eede20401dcae31e9a8148
 export async function fetchPatients() {
   const res = await fetch(`${API_BASE}/patients`);
   return res.json();
